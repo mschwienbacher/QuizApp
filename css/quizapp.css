@@ -7,3 +7,19 @@ body {
     font-family: 'Open Sans', sans-serif;
     font-weight: 400;
 }
+
+.main-section {
+    display: flex;
+    flex-direction: row;
+    min-height: 100vh;
+}
+
+.sidebar {
+    width: 30%;
+    background: #54ace1;
+}
+
+.main {
+    width: 70%;
+    background: #fcfcfc; 
+}
