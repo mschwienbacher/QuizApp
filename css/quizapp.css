@@ -187,3 +187,8 @@ body {
     background: #4ebf16;
     border-color: #4ebf16;
 }
+
+.card-footer {
+    display: flex;
+    justify-content: space-evenly;
+}

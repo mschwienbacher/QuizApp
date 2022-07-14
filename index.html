@@ -28,7 +28,7 @@
             https://getbootstrap.com/docs/4.0/components/navs/#base-nav
          -->
     </head>
-    <body class="quiz-game the-result"><!-- Add the-result class on last page -->
+    <body class="quiz-game the-result" onload="init()"><!-- Add the-result class on last page -->
         <div class="main-section">
             <div class="sidebar">
                 <div class="center">
@@ -61,18 +61,18 @@
                                 <p class="card-text">Ready for the Challenge?</p>
                                 <a href="#" class="btn btn-primary">Start now</a>
                             </div> -->
-                            <!-- QUESTION 
+                            
                             <div class="main-card">
-                                <h2>Wie ist eine HTML-Datei unterteilt?</h2>
+                                <h2 id="single-question">Wie ist eine HTML-Datei unterteilt?</h2>
                                 <ul class="list-group list-group-flush">
-                                    <li class="list-group-item correct"><span>A</span> Head, body</li>
-                                    <li class="list-group-item"><span>B</span>Table, border</li>
-                                    <li class="list-group-item"><span>C</span>Img, alt</li>
-                                    <li class="list-group-item wrong"><span>D</span>Title, body</li>
+                                    <li class="list-group-item correct" id="answer_1"><span>A</span> Head, body</li>
+                                    <li class="list-group-item" id="answer_2"><span>B</span>Table, border</li>
+                                    <li class="list-group-item" id="answer_3"><span>C</span>Img, alt</li>
+                                    <li class="list-group-item wrong" id="answer_4"><span>D</span>Title, body</li>
                                 </ul>
                                 <a href="#" class="btn btn-success">Next question</a>
                             </div>
-                            -->
+
                             <!-- RESULT -->
                             <div class="main-card"> 
                                 <img src="images/result.png" width="180" height="180" alt="" class="result-img">
@@ -88,7 +88,8 @@
                             </div>
                         </div>
                         <div class="card-footer text-muted">
-                          &copy; Michael Schwienbacher - 2022
+                            <p><span>1</span> von <strong id="question-length">4</strong> Fragen</p>
+                          <p>&copy; Michael Schwienbacher - 2022</p>
                         </div>
                       </div>
 
