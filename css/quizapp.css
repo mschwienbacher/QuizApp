@@ -6,6 +6,7 @@
 body {
     font-family: 'PT Sans', sans-serif;
     font-weight: 400;
+    background: #f7f7f7;
 }
 
 .main-section {
@@ -30,6 +31,11 @@ body {
 .main {
     width: 80%;
     background: #fcfcfc; 
+}
+
+.main .center, .card {
+    height: 100vh;
+    background: #f7f7f7;
 }
 
 .logo {
@@ -70,4 +76,19 @@ body {
 
 .nav a:hover {
     border-color: #fff;
+}
+
+.main-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: calc(100vh - 82px);
+    font-family: 'PT Sans', sans-serif !important;
+
+}
+
+.card-body {
+    padding: 0;
+    background:url("../images/brain.jpg") no-repeat center;
 }
