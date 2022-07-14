@@ -17,7 +17,7 @@ body {
 
 .sidebar {
     width: 20%;
-    background: #27355c;
+    background: #20485e;
 }
 
 .sidebar .center {
@@ -87,6 +87,7 @@ body {
     font-family: 'PT Sans', sans-serif !important;
     max-width: 640px;
     margin: 0 auto;
+    background:url("../images/brain.jpg") no-repeat center;
 
 }
 
@@ -113,18 +114,18 @@ body {
 }
 
 .list-group-flush>.list-group-item.correct {
-    background: green;
-    color: white;
+    background: #4ebf16;
+    color: #fff;
 }
 
 .list-group-flush>.list-group-item.correct span {
-    background: white;
-    color: green;
+    background: #fff;
+    color: #4ebf16;
 }
 
 .list-group-flush>.list-group-item.wrong {
     background: red;
-    color: white;
+    color: #fff;
 }
 
 .list-group-flush>.list-group-item.wrong span {
@@ -138,5 +139,51 @@ body {
 
 .card-body {
     padding: 0;
-    background:url("../images/brain.jpg") no-repeat center;
+}
+
+.result-img {
+    width: 20%;
+    height: auto;
+    display: block;
+}
+
+.the-result h2 {
+    margin: 20px 0;
+}
+
+.final-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.score {
+    font-size: 18px;
+    margin: 0 0 20px 0;
+}
+
+.points {
+    font-size: 19px;
+}
+
+.final-buttons a {
+    margin: 0 10px;
+}
+
+.the-result .card-body {
+    background:url("../images/trophy.png") no-repeat center right;
+}
+
+.the-result .main-card {
+    background: none;
+}
+
+.progress-bar, .btn-primary, .btn-primary:hover {
+    background: #20485e;
+    border-color: #20485e;
+}
+
+.btn-success, .btn-success:hover {
+    background: #4ebf16;
+    border-color: #4ebf16;
 }
