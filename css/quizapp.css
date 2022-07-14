@@ -23,7 +23,7 @@ body {
 .sidebar .center {
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     height: 100%;
 }
@@ -85,7 +85,55 @@ body {
     justify-content: center;
     height: calc(100vh - 82px);
     font-family: 'PT Sans', sans-serif !important;
+    max-width: 640px;
+    margin: 0 auto;
 
+}
+
+.list-group-flush {
+    width: 100%;
+}
+
+.list-group-flush>.list-group-item {
+    margin: 10px 0;
+    padding: 15px 10px;
+    text-align: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.list-group-flush>.list-group-item span {
+    background: red;
+    text-align: center;
+    padding:2px 10px;
+    background: rgba(0, 0, 0, 0.03);
+    border: 1px solid rgba(0, 0, 0, 0.175);
+    margin: 0 20px 0 0;
+}
+
+.list-group-flush>.list-group-item.correct {
+    background: green;
+    color: white;
+}
+
+.list-group-flush>.list-group-item.correct span {
+    background: white;
+    color: green;
+}
+
+.list-group-flush>.list-group-item.wrong {
+    background: red;
+    color: white;
+}
+
+.list-group-flush>.list-group-item.wrong span {
+    background: white;
+    color: red;
+}
+
+.btn {
+    margin: 20px 0 0 0;
 }
 
 .card-body {
