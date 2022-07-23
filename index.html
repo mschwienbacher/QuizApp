@@ -28,7 +28,7 @@
             https://getbootstrap.com/docs/4.0/components/navs/#base-nav
          -->
     </head>
-    <body class="quiz-game the-result" onload="init()"><!-- Add the-result class on last page -->
+    <body class="quiz-game" onload="init()">
         <div class="main-section">
             <div class="sidebar">
                 <div class="center">
@@ -50,53 +50,18 @@
                     
                     <div class="card text-center">
                         <div class="card-header">
-                            <div class="progress">
-                                <div class="progress-bar" role="progressbar" style="width: 25%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100">25%</div>
+                            <div class="progress" id="progress">
                               </div>
                         </div>
                         <div class="card-body">
-                            <!-- START 
-                            <div class="main-card">
-                                <h1 class="card-title">Welcome to <br> The Awesome Coding-Quiz</h1>
+                            <div class="main-card" id="main-card">
+                                <h1 class="card-title">Welcome to <br> The <strong>Awesome Coding-Quiz</strong></h1>
                                 <p class="card-text">Ready for the Challenge?</p>
-                                <a href="#" class="btn btn-primary">Start now</a>
-                            </div> -->
-                            
-                            <div class="main-card">
-                                <h2 id="single-question">Wie ist eine HTML-Datei unterteilt?</h2>
-                                <ul class="list-group list-group-flush" id="questionList">
-                                    <li class="list-group-item" id="answer_1" onclick="answer('answer_1');">
-                                        <span>A</span> Head, body
-                                    </li>
-                                    <li class="list-group-item" id="answer_2" onclick="answer('answer_2');">
-                                        <span>B</span>Table, border
-                                    </li>
-                                    <li class="list-group-item" id="answer_3" onclick="answer('answer_3');">
-                                        <span>C</span>Img, alt
-                                    </li>
-                                    <li class="list-group-item" id="answer_4" onclick="answer('answer_4');">
-                                        <span>D</span>Title, body
-                                    </li>
-                                </ul>
-                                <button class="btn btn-success" id="next-question" disabled onclick="nextQuestion();">Nächste Frage</button>
+                                <button onclick="showQuestion()" class="btn btn-primary">Start now</button>
                             </div>
-
-                            <!-- RESULT 
-                            <div class="main-card"> 
-                                <img src="images/result.png" width="180" height="180" alt="" class="result-img">
-                                <h2>Coding-Quiz <br> completed</h2>
-                                <p class="score">
-                                    <span>Your score:</span>
-                                    <span class="points"><strong>10 / 10</strong></span>
-                                </p>
-                                <p class="final-buttons">
-                                    <a href="#" class="btn btn-success">Share</a>
-                                    <a href="#" class="btn btn-primary">Replay</a>
-                                </p>
-                            </div>-->
                         </div>
                         <div class="card-footer text-muted">
-                            <p><span id="curr-question"></span> von <strong id="question-length">4</strong> Fragen</p>
+                            <p><span id="qcontainer"><span id="curr-question">0</span> von <strong id="question-length">4</strong> Fragen</span></p>
                           <p>&copy; Michael Schwienbacher - 2022</p>
                         </div>
                       </div>

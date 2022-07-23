@@ -197,3 +197,7 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
+#qcontainer {
+    /*display: none;*/
+}
