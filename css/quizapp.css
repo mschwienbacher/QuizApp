@@ -102,6 +102,11 @@ body {
     display: flex;
     justify-content: flex-start;
     align-items: center;
+    cursor: pointer;
+}
+
+.list-group-flush>.list-group-item:hover {
+    background-color: #efefef;
 }
 
 .list-group-flush>.list-group-item span {

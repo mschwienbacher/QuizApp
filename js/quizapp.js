@@ -59,3 +59,7 @@ function showQuestion() {
     question3.innerHTML = question["answer_3"];
     question4.innerHTML = question["answer_4"];
 }
+
+function answer(selection) {
+    alert(selection);
+}
