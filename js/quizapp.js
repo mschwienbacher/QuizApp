@@ -61,7 +61,6 @@ function showQuestion() {
     else if (currentQuestion >= questions.length) {
         showFinalePage();
         updateProgressBar(100);
-        document.body.classList.add('the-result');
     } else {
         showQuestionTemplate();
         updateProgressBar(questions[currentQuestion]["percent"]);
@@ -72,13 +71,6 @@ function updateProgressBar(status) {
     let progressElement = document.getElementById("progress");
     progressElement.innerHTML = `
         <div class="progress-bar" role="progressbar" style="width: ${status}%;" aria-valuenow="${status}" aria-valuemin="0" aria-valuemax="100" id="percent">${status}%</div>
-    `;
-}
-
-function showStartPage() {
-    let main = document.getElementById("main-card");
-    main.innerHTML = `
-        
     `;
 }
 
@@ -107,6 +99,7 @@ function showQuestionTemplate() {
 }
 
 function showFinalePage() {
+    document.body.classList.add('the-result');
     let main = document.getElementById("main-card");
     main.innerHTML = `
         <img src="images/result.png" width="180" height="180" alt="" class="result-img">
@@ -116,7 +109,7 @@ function showFinalePage() {
             <span class="points"><strong>10 / ${questions.length}</strong></span>
         </p>
         <p class="final-buttons">
-            <button id="next-question" class="btn btn-primary">Replay</button>
+            <button id="next-question" onclick="location.reload()" class="btn btn-primary">Replay</button>
         </p>
     `;
 }
@@ -134,19 +127,22 @@ function answer(selection) {
         document.getElementById(selection).classList.add("wrong");
         document.getElementById("answer_" + correctAnswer).classList.add("correct");
     }
-
     nextQuestion.removeAttribute("disabled");
 }
 
 function nextQuestion() {
     currentQuestion++;
     showQuestion();
-    cleanStyle(); 
+    if(currentQuestion <= 3) {
+        cleanStyle(); 
+    }
 }
 
 function cleanStyle() {
     let nextQuestion = document.getElementById("next-question");
-    nextQuestion.setAttribute("disabled", "disabled");
+    if(currentQuestion != 4) {
+        nextQuestion.setAttribute("disabled", "disabled");
+    }
     let listElements = document.getElementById("questionList").getElementsByTagName('li');
     for(let i = 0; i < listElements.length; i++) {
         let el = listElements[i];
