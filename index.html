@@ -26,6 +26,8 @@
             3. git push
 
             https://getbootstrap.com/docs/4.0/components/navs/#base-nav
+
+            TODO Fine Tuning, Responsive, Videos fertig schauen! (Musik)
          -->
     </head>
     <body class="quiz-game" onload="init()">
@@ -36,11 +38,11 @@
                         <img src="images/logo.png" width="110" height="95" alt="Quiz Logo" class="logo">
                     </a>
                     <nav class="nav">
-                        <ul>
-                            <li><a href="#">HTML</a></li>
-                            <li><a href="#">CSS</a></li>
-                            <li><a href="#">JS</a></li>
-                            <li><a href="#">PHP</a></li>
+                        <ul id="sectionlist">
+                            <li id="list_0"><a href="#">HTML</a></li>
+                            <li id="list_1"><a href="#">CSS</a></li>
+                            <li id="list_2"><a href="#">JS</a></li>
+                            <li id="list_3"><a href="#">PHP</a></li>
                         </ul>
                     </nav>
                 </div>
@@ -61,7 +63,7 @@
                             </div>
                         </div>
                         <div class="card-footer text-muted">
-                            <span><span id="qcontainer"><span id="curr-question">0</span> von <strong id="question-length">4</strong> Fragen</span></span>
+                            <span><span id="qcontainer">Question <strong><span id="curr-question">0</span></strong> of <strong id="question-length">4</strong></span></span>
                           <span>&copy; Michael Schwienbacher - 2022</span>
                         </div>
                       </div>

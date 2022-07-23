@@ -9,6 +9,11 @@ body {
     background: #f7f7f7;
 }
 
+.h2, h2 {
+    font-size: 1.7em;
+    line-height: 140%;
+}
+
 .main-section {
     display: flex;
     flex-direction: row;
@@ -34,8 +39,9 @@ body {
 }
 
 .main .center, .card {
-    /*height: 100vh;*/
+    height: 100vh;
     background: #f7f7f7;
+    --bs-card-border-radius: 0rem !important;
 }
 
 .logo {
@@ -74,7 +80,7 @@ body {
     border-left:5px solid transparent;
 }
 
-.nav a:hover {
+.nav a:hover, .nav li.active a {
     border-color: #fff;
 }
 
@@ -103,6 +109,7 @@ body {
     justify-content: flex-start;
     align-items: center;
     cursor: pointer;
+    border: 1px solid #efefef;
 }
 
 .list-group-flush>.list-group-item:hover {
@@ -184,8 +191,8 @@ body {
 }
 
 .progress-bar, .btn-primary, .btn-primary:hover {
-    background: #20485e;
-    border-color: #20485e;
+    background: #4ebf16;
+    border-color: #4ebf16;
 }
 
 .btn-success, .btn-success:hover {

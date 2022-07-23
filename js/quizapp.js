@@ -38,6 +38,7 @@ let questions = [
 ]
 
 let currentQuestion = -1;
+let finalResult = 0;
 
 function init() {
     questionLenght();
@@ -57,6 +58,7 @@ function showQuestion() {
     else if (currentQuestion == 0) {
         showQuestionTemplate();
         updateProgressBar(questions[currentQuestion]["percent"]);
+        document.getElementById("list_0").classList.add("active");
     }
     else if (currentQuestion >= questions.length) {
         showFinalePage();
@@ -78,6 +80,7 @@ function showQuestionTemplate() {
     let main = document.getElementById("main-card");
     let question = questions[currentQuestion];
     document.getElementById("curr-question").innerHTML = currentQuestion + 1;
+    changeSideBar();
     main.innerHTML = `
         <h2 id="single-question">${question["question"]}</h2>
         <ul class="list-group list-group-flush" id="questionList">
@@ -94,19 +97,39 @@ function showQuestionTemplate() {
                 ${question["answer_4"]}
             </li>
         </ul>
-        <button class="btn btn-success" id="next-question" disabled onclick="nextQuestion();">Nächste Frage</button>
+        <button class="btn btn-success" id="next-question" disabled onclick="nextQuestion();">Next Question</button>
     `;
+}
+
+function changeSideBar() {
+    let lists = document.getElementById("sectionlist").getElementsByTagName('li');
+    for(let i = 0; i < lists.length; i++) {
+        let el = lists[i];
+        el.classList.remove("active");
+    }
+
+    let listElement = document.getElementById("list_" + currentQuestion).getAttribute("id");
+    let slicedList = listElement.slice(-1);
+
+    if(currentQuestion == slicedList) {
+        document.getElementById("list_" + currentQuestion).classList.add("active");
+    }
 }
 
 function showFinalePage() {
     document.body.classList.add('the-result');
+    let lists = document.getElementById("sectionlist").getElementsByTagName('li');
+    for(let i = 0; i < lists.length; i++) {
+        let el = lists[i];
+        el.classList.remove("active");
+    }
     let main = document.getElementById("main-card");
     main.innerHTML = `
         <img src="images/result.png" width="180" height="180" alt="" class="result-img">
         <h2>Coding-Quiz <br> completed</h2>
         <p class="score">
             <span>Your score:</span>
-            <span class="points"><strong>10 / ${questions.length}</strong></span>
+            <span class="points"><strong>${finalResult} / ${questions.length}</strong></span>
         </p>
         <p class="final-buttons">
             <button id="next-question" onclick="location.reload()" class="btn btn-primary">Replay</button>
@@ -123,6 +146,7 @@ function answer(selection) {
 
     if(selectedQuestionNumber == correctAnswer) {
         document.getElementById(selection).classList.add("correct");
+        finalResult++;
     } else {
         document.getElementById(selection).classList.add("wrong");
         document.getElementById("answer_" + correctAnswer).classList.add("correct");
