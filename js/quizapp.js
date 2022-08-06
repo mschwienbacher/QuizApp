@@ -39,8 +39,8 @@ let questions = [
 
 let currentQuestion = -1;
 let finalResult = 0;
-let AUDIO_SUCCESS = new Audio("../audio/success.mp3");
-let AUDIO_FAIL = new Audio("../audio/fail.mp3");
+let AUDIO_SUCCESS = new Audio("audio/success.mp3");
+let AUDIO_FAIL = new Audio("audio/fail.mp3");
 
 
 function init() {
