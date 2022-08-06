@@ -39,6 +39,9 @@ let questions = [
 
 let currentQuestion = -1;
 let finalResult = 0;
+let AUDIO_SUCCESS = new Audio("../audio/success.mp3");
+let AUDIO_FAIL = new Audio("../audio/fail.mp3");
+
 
 function init() {
     questionLenght();
@@ -146,9 +149,11 @@ function answer(selection) {
 
     if(selectedQuestionNumber == correctAnswer) {
         document.getElementById(selection).classList.add("correct");
+        AUDIO_SUCCESS.play();
         finalResult++;
     } else {
         document.getElementById(selection).classList.add("wrong");
+        AUDIO_FAIL.play();
         document.getElementById("answer_" + correctAnswer).classList.add("correct");
     }
     nextQuestion.removeAttribute("disabled");

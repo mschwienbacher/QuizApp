@@ -204,3 +204,36 @@ body {
     display: flex;
     justify-content: space-evenly;
 }
+
+@media(max-width: 930px) {
+    .main-section {
+        flex-direction: column;
+    }
+    .main-section {
+        min-height: auto;
+    }
+    .main .center, .card, .main-card {
+        height: auto;
+    }
+    .main-card {
+        padding: 30px 0;
+    }
+    .the-result .card-body {
+        background:none;
+    }
+    .list-group-flush {
+        width: 90%;
+    }
+    .sidebar, .main {
+        width: 100%;
+    }
+    .sidebar .center {
+        padding: 20px 0;
+    }
+    .card-footer {
+        flex-direction: column;
+    }
+    .nav {
+        display: none;
+    }
+}
